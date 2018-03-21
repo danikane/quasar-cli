@@ -47,11 +47,15 @@ import router from 'src/router'
 <% if (store) { %>
 import store from 'src/store'
 <% } %>
+<% if (stash) { %>
+import stash from 'src/stash'
+<% } %>
 
 const app = {
   el: '#q-app',
   router,
 <% if (store) { %>store,<% } %>
+<% if (stash) { %>data: { store: stash },<% } %>
   ...App
 }
 
